@@ -37,26 +37,82 @@ public class EmployeeTest {
     public void tearDown() {
     }
 
+    
+    
+    
+    //probar con currency diferentes de USD, con cada tipo de empleado, porcentaje (mayor a 100, 0 y negativo)
+    
     /**
      * Test of cs method, of class Employee.
      */
+    
+    
+    
+    
     @Test
-    public void testCs() {
-        //probar con currency diferentes de USD, con cada tipo de empleado, porcentaje (mayor a 100, 0 y negativo)
+    public void testCs1() {
+        
+        //Prueba con currency distintos de USD, clase worker
+  
         System.out.println("cs");
-        Employee instance = new Employee(300,"USD",10,EmployeeType.Worker);
-        float expResult = 0.0F;
+        Employee instance = new Employee(300.0F,"EU",100.0F,EmployeeType.Worker);
+        float expResult = 349.33F;
         
         float result = instance.cs();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
+        assertEquals(expResult, result, 0.1); 
+    }
+   @Test
+    public void testCs2() {
+        
+        //Prueba con clase Manager para analizar el
+        //correcto funcionamiento de dicha funcionalidad.
+  
+        System.out.println("cs");
+        Employee instance = new Employee(300.0F,"USD",100.0F,EmployeeType.Manager);
+        float expResult = 434.33F;
+        
+        float result = instance.cs();
+        assertEquals(expResult, result, 0.1); 
+    } 
+    
+    @Test
+    public void testCs3() {
+        
+        //Prueba con clase supervisor para analizar el
+        //correcto funcionamiento de dicha funcionalidad.
+  
+        System.out.println("cs");
+        Employee instance = new Employee(300.0F,"USD",100.0F,EmployeeType.Supervisor);
+        float expResult = 399.33F;
+        
+        float result = instance.cs();
+        
+        assertEquals(expResult, result, 0.1); 
+        
+    } 
+    @Test
+    public void testCs4() {
+        
+        //Prueba con Porcentaje negativo, puesto que el metodo no restringe ni valida
+        //valores no negativos
+  
+        System.out.println("cs");
+        Employee instance = new Employee(300.0F,"USD",-100.0F,EmployeeType.Supervisor);
+        float expResult = 329.33F;
+        
+        float result = instance.cs();
+        
+        assertEquals(expResult, result, 0.1); 
         
     }
+    
+    
+    
 
     /**
      * Test of CalculateYearBonus method, of class Employee.
      */
-    @Test
+   /* @Test
     public void testCalculateYearBonus() {
         System.out.println("CalculateYearBonus");
         Employee instance = null;
@@ -66,5 +122,5 @@ public class EmployeeTest {
         // TODO review the generated test code and remove the default call to fail.
         
     }
-    
+    */
 }
