@@ -39,8 +39,7 @@ public class Employee {   //remuneracion mensual unificada
         Date date = new Date();
         //Obtiene la hora local
         LocalDate localDate;
-        localDate = date.toInstant()
-                .atZone(ZoneId.systemDefault()).toLocalDate();
+        localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         //Obtiene el mes en forma de entero
         int month = localDate.getMonthValue();
         // Si la moneda es USD, se considera todo el salario,
