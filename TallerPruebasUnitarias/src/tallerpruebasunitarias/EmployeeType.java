@@ -7,6 +7,8 @@ package tallerpruebasunitarias;
 
 /**
  *
- * @author Hossu-PC
+ * @author Grupo Cabezas-Cajas-Moyano
  */
-public enum EmployeeType { Worker, Supervisor, Manager }
+public enum EmployeeType {
+    Worker, Supervisor, Manager
+}
